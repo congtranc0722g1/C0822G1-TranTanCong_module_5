@@ -1,0 +1,17 @@
+.main {
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.margin {
+    margin: 5px;
+}
+
+.background-main {
+    background-color: aqua;
+}
+
+.widthcss{
+    height: 135px;
+}
