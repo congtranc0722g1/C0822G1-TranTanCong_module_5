@@ -1,7 +1,6 @@
 function fibonacci(amount: number): number {
     if (amount <= 1) return amount;
     return fibonacci(amount - 1) + fibonacci(amount - 2);
-
 }
 
 // @ts-ignore

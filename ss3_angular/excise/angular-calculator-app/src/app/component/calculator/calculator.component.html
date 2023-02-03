@@ -1,0 +1,14 @@
+<h1>Calculator App</h1>
+<p>Fist Number</p>
+<input type="text" [(ngModel)]="calculator.fistNumber" (change)="calculate($event.target)">
+<p>Oerator</p>
+<select [(ngModel)]="calculator.operator" (change)="calculate($event.target)">
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option>
+</select>
+<p>Second Number</p>
+<input type="text" [(ngModel)]="calculator.secondNumber" (change)="calculate($event.target)">
+<br>
+<p>Result: {{calculator.result}}</p>
