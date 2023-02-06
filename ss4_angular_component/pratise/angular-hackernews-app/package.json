@@ -1,5 +1,5 @@
 {
-  "name": "angular-calculator-app",
+  "name": "angular-hackernews-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -19,7 +19,9 @@
     "@angular/platform-browser": "~9.0.7",
     "@angular/platform-browser-dynamic": "~9.0.7",
     "@angular/router": "~9.0.7",
-    "bootstrap": "^5.2.3",
+    "angular-popper": "^2.0.1",
+    "bootstrap": "^4.6.2",
+    "popper.js": "^1.12.3",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

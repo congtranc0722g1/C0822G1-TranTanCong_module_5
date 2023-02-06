@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-color-picker-app": {
+    "angular-hackernews-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-color-picker-app",
+            "outputPath": "dist/angular-hackernews-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,12 +24,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.css"
+              "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -65,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-color-picker-app:build"
+            "browserTarget": "angular-hackernews-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-color-picker-app:build:production"
+              "browserTarget": "angular-hackernews-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-color-picker-app:build"
+            "browserTarget": "angular-hackernews-app:build"
           }
         },
         "test": {
@@ -113,19 +110,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-color-picker-app:serve"
+            "devServerTarget": "angular-hackernews-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-color-picker-app:serve:production"
+              "devServerTarget": "angular-hackernews-app:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "angular-color-picker-app",
+  "defaultProject": "angular-hackernews-app",
   "cli": {
-    "analytics": "0510d9a3-8cc6-4f4f-afb4-2185925c4c5f"
+    "analytics": "a45fd966-cac0-4021-871c-5679c6e232fb"
   }
 }
