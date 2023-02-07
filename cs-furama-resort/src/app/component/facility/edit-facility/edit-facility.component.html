@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Facility</title>
+</head>
+<body>
+
+<section class="gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">CHỈNH sỬA DỊCH VỤ</h3>
+            <form>
+
+
+              <div class="form-outline">
+                <label for="facilityType" class="form-label fs-6">Loại Dịch Vụ</label>
+                <select id="facilityType" class="select form-control-lg"
+                        onchange="showValue()">
+                  <option value="1">Villa</option>
+                  <option value="2" selected>House</option>
+                  <option value="3">Room</option>
+                </select>
+              </div>
+
+
+              <div class="form-outline">
+                <label class="form-label" for="name">Tên dịch vụ</label>
+                <input value="Villa No 1" type="text" id="name" class="form-control form-control-lg"/>
+              </div>
+
+
+              <div class="form-outline">
+                <label class="form-label" for="area">Diện Tích</label>
+                <input value="500m2" type="text" id="area" class="form-control form-control-lg"/>
+              </div>
+
+
+              <div class="form-outline datepicker w-100">
+                <label for="cost" class="form-label">Chi Phí Thuê</label>
+                <input value="10.000.000đ" type="text" id="cost" class="form-control form-control-lg"/>
+              </div>
+
+
+              <div class="form-outline datepicker w-100">
+                <label for="maxPeople" class="form-label">Số Người Tối Đa</label>
+                <input value="7" type="text" id="maxPeople" class="form-control form-control-lg"/>
+              </div>
+
+
+              <div class="form-outline mt-3 mb-3">
+                <label for="rentType" class="form-label fs-6">Kiểu Thuê</label>
+                <select id="rentType" class="select form-control-lg">
+                  <option value="1">Giờ</option>
+                  <option value="2">Ngày</option>
+                  <option value="3">Tháng</option>
+                  <option value="4" selected>Năm</option>
+                </select>
+              </div>
+
+
+              <div id="standardRoom" class="form-outline">
+                <label for="standardRoom1" class="form-label">Tiêu Chuẩn Phòng</label>
+                <input value="VIP" type="text" id="standardRoom1" class="form-control form-control-lg"/>
+              </div>
+
+
+              <div id="descriptionOtherConvenience" class="form-outline">
+                <label for="descriptionOtherConvenience1" class="form-label">Mô Tả Tiện Nghi
+                  Khác</label>
+                <input value="View Biển" type="text" id="descriptionOtherConvenience1"
+                       class="form-control form-control-lg"/>
+              </div>
+
+
+              <div id="poolArea" class="form-outline">
+                <label for="poolArea1" class="form-label">Diện Tích Hồ Bơi</label>
+                <input value="30m2" type="text" id="poolArea1" class="form-control form-control-lg"/>
+              </div>
+
+              <div id="numbersOfFloors" class="form-outline">
+                <label for="numbersOfFloors1" class="form-label">Số Tầng</label>
+                <input value="3" type="text" id="numbersOfFloors1"
+                       class="form-control form-control-lg"/>
+              </div>
+
+              <div style="display: none" id="facilityFree" class="form-outline">
+                <label for="facilityFree1" class="form-label">Dịch Vụ Miễn Phí Đi Kèm</label>
+                <input value="Bữa sáng miễn phí" type="text" id="facilityFree1"
+                       class="form-control form-control-lg"/>
+              </div>
+
+
+              <div class="mt-4 pt-2">
+                <button class="btn btn-primary btn-lg" type="submit">Lưu</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  function showValue() {
+    var ele = facilityType.value;
+    if (ele == 1) {
+      document.getElementById("facilityFree").style.display = "none";
+      document.getElementById("poolArea").style.display = "block"
+      document.getElementById("numbersOfFloors").style.display = "block"
+      document.getElementById("standardRoom").style.display = "block"
+      document.getElementById("descriptionOtherConvenience").style.display = "block"
+    } else if (ele == 2) {
+      document.getElementById("facilityFree").style.display = "none";
+      document.getElementById("poolArea").style.display = "none"
+      document.getElementById("numbersOfFloors").style.display = "block"
+      document.getElementById("standardRoom").style.display = "block"
+      document.getElementById("descriptionOtherConvenience").style.display = "block"
+    } else {
+      document.getElementById("facilityFree").style.display = "block"
+      document.getElementById("poolArea").style.display = "none"
+      document.getElementById("numbersOfFloors").style.display = "none"
+      document.getElementById("standardRoom").style.display = "none"
+      document.getElementById("descriptionOtherConvenience").style.display = "none"
+    }
+  }
+</script>
+</body>
+</html>
