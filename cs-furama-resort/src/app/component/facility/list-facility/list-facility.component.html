@@ -27,147 +27,41 @@
         <button class="btn btn-success btn-outline-warning" type="submit">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                class="bi bi-search" viewBox="0 0 16 16">
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
           </svg>
         </button>
       </form>
     </div>
   </div>
 
-  <div class="row margin g-2">
-    <div class="col-lg-4">
-      <div class="card">
-        <img src="/assets/images/facility1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">OCEAN SUITE</h5>
-          <p class="card-text">Diện Tích: 100 m2</p>
-          <div class="row">
-            <div class="col-lg-4">
-              <a class="btn btn-primary" style="width: 100px" href="../facility/edit.html" role="button">Chỉnh Sửa</a>
-            </div>
 
-            <div class="col-lg-4">
-              <a>
-                <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  Xóa
-                </button>
-              </a>
+  <div *ngFor="let temp of facilityList" class="row margin g-2">
+      <div class="col-lg-4" style="display: inline-block">
+        <div class="card">
+          <img src="/assets/images/facility1.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{temp.name}}</h5>
+            <p class="card-text">Diện Tích: {{temp.area}} m2</p>
+            <div class="row">
+              <div class="col-lg-4">
+                <a class="btn btn-primary" style="width: 100px" [routerLink]="['/facility-edit']" role="button">Chỉnh
+                  Sửa</a>
+              </div>
+
+              <div class="col-lg-4">
+                <a>
+                  <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Xóa
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="card">
-        <img src="/assets/images/facility2.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">OCEAN STUDIO SUITE</h5>
-          <p class="card-text">Diện Tích: 150 m2.</p>
-          <div class="row">
-            <div class="col-lg-4">
-              <a class="btn btn-primary" style="width: 100px" href="../facility/edit.html" role="button">Chỉnh Sửa</a>
-            </div>
-
-            <div class="col-lg-4">
-              <a>
-                <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  Xóa
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="card">
-        <img src="/assets/images/facility3.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">OCEAN DELUXE</h5>
-          <p class="card-text">Diện Tích: 200 m2</p>
-          <div class="row">
-            <div class="col-lg-4">
-              <a class="btn btn-primary" style="width: 100px" href="../facility/edit.html" role="button">Chỉnh Sửa</a>
-            </div>
-
-            <div class="col-lg-4">
-              <a>
-                <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  Xóa
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="card">
-        <img src="/assets/images/facility4.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">LAGOON SUPERIOR</h5>
-          <p class="card-text">Diện Tích: 250 m2</p>
-          <div class="row">
-            <div class="col-lg-4">
-              <a class="btn btn-primary" style="width: 100px" href="../facility/edit.html" role="button">Chỉnh Sửa</a>
-            </div>
-
-            <div class="col-lg-4">
-              <a>
-                <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  Xóa
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="card">
-        <img src="/assets/images/facility5.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">GARDEN SUPERIOR</h5>
-          <p class="card-text">Diện Tích: 300 m2</p>
-          <div class="row">
-            <div class="col-lg-4">
-              <a class="btn btn-primary" style="width: 100px" href="../facility/edit.html" role="button">Chỉnh Sửa</a>
-            </div>
-
-            <div class="col-lg-4">
-              <a>
-                <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  Xóa
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="card">
-        <img src="/assets/images/facility6.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">GARDEN DELUXE</h5>
-          <p class="card-text">Diện Tích: 300 m2</p>
-          <div class="row">
-            <div class="col-lg-4">
-              <a class="btn btn-primary" style="width: 100px" href="../facility/edit.html" role="button">Chỉnh Sửa</a>
-            </div>
-
-            <div class="col-lg-4">
-              <a>
-                <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  Xóa
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
+
   <br>
 </div>
 
