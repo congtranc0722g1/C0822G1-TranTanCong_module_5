@@ -35,11 +35,11 @@
     </div>
   </div>
 
-
-  <div *ngFor="let temp of facilityList" class="row margin g-2">
-      <div class="col-lg-4" style="display: inline-block">
+<!--  *ngFor="let temp of facilityList"-->
+  <div class="row margin g-2">
+      <div *ngFor="let temp of facilityList" class="col-lg-4">
         <div class="card">
-          <img src="/assets/images/facility1.jpg" class="card-img-top" alt="...">
+          <img src="{{temp.image}}" height="300px" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{temp.name}}</h5>
             <p class="card-text">Diện Tích: {{temp.area}} m2</p>
@@ -49,17 +49,20 @@
                   Sửa</a>
               </div>
 
-              <div class="col-lg-4">
+              <div class="col-lg-3">
                 <a>
                   <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Xóa
                   </button>
                 </a>
               </div>
+                <button class="btn btn-secondary" style="width: 80px">Chi Tiết</button>
+
             </div>
           </div>
         </div>
     </div>
+
   </div>
 
   <br>

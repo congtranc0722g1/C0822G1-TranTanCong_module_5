@@ -1,0 +1,44 @@
+<h1>Đăng Ký</h1>
+<form [formGroup]="form" (ngSubmit)="registerForm()">
+  <p>Email: </p>
+  <input formControlName="email" class="space" type="text" name="email">
+  <p style="color: red" *ngIf="form.controls.email.hasError('required') && form.controls.email.dirty">Không được để
+    trống</p>
+  <p style="color: red" *ngIf="form.controls.email.hasError('pattern')">Email không đúng định dạng</p>
+  <p>Password</p>
+  <input formControlName="password" class="space" style="line-height: 1px" type="password" name="password">
+  <p style="color: red" *ngIf="form.controls.password.hasError('required') && form.controls.password.dirty">Không được
+    để trống</p>
+  <p style="color: red" *ngIf="form.controls.password.hasError('minlength')">Mật khẩu phải có ít nhất 6 ký tự</p>
+  <p>Confirm Password</p>
+  <input formControlName="confirmPassword" class="space" type="password" name="confirmPassword">
+  <p style="color: red" *ngIf="form.controls.confirmPassword.hasError('required') && form.controls.confirmPassword.dirty">Không được để
+    trống</p>
+  <p style="color: red" *ngIf="form.controls.confirmPassword.hasError('minlength')">Mật khẩu phải có ít nhất 6 ký tự</p>
+  <p>Country</p>
+  <select class="space" formControlName="country" name="country" value="Select country">
+    <option [selected]="form" value="vietnam">VietNam</option>
+    <option value="lao">Lao</option>
+    <option value="campodia">Campodia</option>
+  </select>
+  <p style="color: red" *ngIf="form.controls.country.hasError('required') && form.controls.country.dirty">Không được để
+    trống</p>
+  <p>Age</p>
+  <input formControlName="age" class="space" type="number" name="age">
+  <p style="color: red" *ngIf="form.controls.age.hasError('required') && form.controls.age.dirty">Không được để
+    trống</p>
+  <p style="color: red" *ngIf="form.controls.age.hasError('min')">Tuổi phải hơn hoặc bằng 18</p>
+  <p>Gender</p>
+  <input value="true" formControlName="gender" type="radio" name="gender" [checked]="true">Nam
+  <input value="false" formControlName="gender" class="space" type="radio" name="gender">Nữ
+  <p style="color: red" *ngIf="form.controls.gender.hasError('required') && form.controls.gender.dirty">Không được để
+    trống</p>
+  <p>Phone</p>
+  <input placeholder="Ex: +84xxxxxxxxx" formControlName="phone" class="space" type="text" name="phone">
+  <p style="color: red" *ngIf="form.controls.phone.hasError('required') && form.controls.phone.dirty">Không được để
+    trống</p>
+  <p style="color: red" *ngIf="form.controls.phone.hasError('pattern')">Số điện thoại không đúng định dạng</p>
+  <br>
+  <br>
+  <button class="btn btn-primary" type="submit">Đăng Ký</button>
+</form>
