@@ -12,9 +12,11 @@
   <p style="color: red" *ngIf="form.controls.password.hasError('minlength')">Mật khẩu phải có ít nhất 6 ký tự</p>
   <p>Confirm Password</p>
   <input formControlName="confirmPassword" class="space" type="password" name="confirmPassword">
-  <p style="color: red" *ngIf="form.controls.confirmPassword.hasError('required') && form.controls.confirmPassword.dirty">Không được để
+  <p style="color: red"
+     *ngIf="form.controls.confirmPassword.hasError('required') && form.controls.confirmPassword.dirty">Không được để
     trống</p>
   <p style="color: red" *ngIf="form.controls.confirmPassword.hasError('minlength')">Mật khẩu phải có ít nhất 6 ký tự</p>
+  <p style="color: red" *ngIf="form.hasError('invalidPassword')">Xác nhận mật khẩu phải trùng khớp với mật khẩu</p>
   <p>Country</p>
   <select class="space" formControlName="country" name="country" value="Select country">
     <option [selected]="form" value="vietnam">VietNam</option>
@@ -40,5 +42,5 @@
   <p style="color: red" *ngIf="form.controls.phone.hasError('pattern')">Số điện thoại không đúng định dạng</p>
   <br>
   <br>
-  <button class="btn btn-primary" type="submit">Đăng Ký</button>
+  <input class="btn btn-primary" type="submit" value="Đăng Ký">
 </form>

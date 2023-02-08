@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
@@ -7,6 +7,7 @@ import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/form
   styleUrls: ['./register-form.component.css']
 })
 export class RegisterFormComponent implements OnInit {
+  @Output() userSubmit = new EventEmitter();
   form: FormGroup;
 
   constructor() {
@@ -18,16 +19,26 @@ export class RegisterFormComponent implements OnInit {
       age: new FormControl("", [Validators.required, Validators.min(18)]),
       gender: new FormControl("", [Validators.required]),
       phone: new FormControl("", [Validators.required, Validators.pattern("^\\+84[\\d]{9,10}$")])
-    })
+    }, this.validatePassword)
   }
 
   ngOnInit(): void {
   }
 
   registerForm() {
-
+    console.log(this.form)
+    if (this.form.valid){
+      this.userSubmit.emit(this.form.value)
+    }
   }
 
-  validatePassword(control: AbstractControl){
+  validatePassword(checkForm: any){
+    let password = checkForm.controls.password.value;
+    let confirmPassword = checkForm.controls.confirmPassword.value;
+    if (password != confirmPassword){
+      console.log("psw"+password)
+      return {"invalidPassword": true}
+    }
+    return null;
   }
 }
