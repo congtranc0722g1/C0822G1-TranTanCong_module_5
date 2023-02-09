@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
+import {User} from "../model/user";
 
 @Component({
   selector: 'app-register-form',
@@ -7,6 +8,14 @@ import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/form
   styleUrls: ['./register-form.component.css']
 })
 export class RegisterFormComponent implements OnInit {
+  user: User = {
+    // email: "trantancong@gmail.com",
+    // password: "trantancong@gmail.com",
+    // country: "trantancong@gmail.com",
+    // age: 19,
+    // gender: true,
+    // phone: "trantancong@gmail.com",
+  }
   @Output() userSubmit = new EventEmitter();
   form: FormGroup;
 
@@ -26,19 +35,33 @@ export class RegisterFormComponent implements OnInit {
   }
 
   registerForm() {
-    console.log(this.form)
-    if (this.form.valid){
+    console.log(this.form.value)
+    if (this.form.valid) {
       this.userSubmit.emit(this.form.value)
     }
   }
 
-  validatePassword(checkForm: any){
+  validatePassword(checkForm: any) {
     let password = checkForm.controls.password.value;
     let confirmPassword = checkForm.controls.confirmPassword.value;
-    if (password != confirmPassword){
-      console.log("psw"+password)
+    if (password != confirmPassword) {
+      console.log("psw" + password)
       return {"invalidPassword": true}
     }
     return null;
   }
+
+  // createUser() {
+  //     this.userSubmit.emit(this.user);
+  //   }
+  //
+  //   // this.user = {
+  //   //   email: "trantancong@gmail.com",
+  //   //   password: "trantancong@gmail.com",
+  //   //   country: "trantancong@gmail.com",
+  //   //   age: 19,
+  //   //   gender: true,
+  //   //   phone: "trantancong@gmail.com",
+  //   // }
+
 }

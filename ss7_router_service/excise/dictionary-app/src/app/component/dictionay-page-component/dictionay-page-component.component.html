@@ -1,0 +1,20 @@
+<h1>Từ Điển</h1>
+<table class="table table-info">
+  <thead>
+  <tr>
+    <th>STT</th>
+    <th>Tiếng Anh</th>
+    <th>Dịch Thuật</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let temp of dictionaryList; index as i">
+    <td>{{i}}</td>
+    <td>{{temp.english}}</td>
+    <td>
+      <button class="btn btn-secondary" [routerLink]="['/detail', temp.id]">Dịch</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

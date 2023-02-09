@@ -12,7 +12,7 @@
   <div class="row main mb-3">
 
     <div class="col-lg-8">
-      <a href="../facility/create.html">
+      <a routerLink="/facility-create">
         <button class="btn btn-warning btn-outline-danger">Thêm mới dịch vụ</button>
       </a>
     </div>
@@ -45,7 +45,7 @@
             <p class="card-text">Diện Tích: {{temp.area}} m2</p>
             <div class="row">
               <div class="col-lg-4">
-                <a class="btn btn-primary" style="width: 100px" [routerLink]="['/facility-edit']" role="button">Chỉnh
+                <a class="btn btn-primary" style="width: 100px" routerLink="/facility-edit" role="button">Chỉnh
                   Sửa</a>
               </div>
 

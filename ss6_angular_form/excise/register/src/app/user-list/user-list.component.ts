@@ -15,6 +15,11 @@ export class UserListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
+
+  createUser(event: any) {
+    this.Userlist.push(event)
+  }
 }

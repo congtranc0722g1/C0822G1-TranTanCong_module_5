@@ -1,0 +1,24 @@
+<h1>Xoá sản phẩm</h1>
+<form [formGroup]="form" (ngSubmit)="submit(id)">
+  <table>
+    <tr>
+      <td><input hidden type="number" formControlName="id"></td>
+    </tr>
+    <tr>
+      <td>Tên sản phẩm:</td>
+      <td>{{product.name}}</td>
+    </tr>
+    <tr>
+      <td>Giá sản phẩm</td>
+      <td>{{product.price}}</td>
+    </tr>
+    <tr>
+      <td>Mô tả về sản phẩm</td>
+      <td>{{product.description}}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button>Xoá</button></td>
+    </tr>
+  </table>
+</form>
