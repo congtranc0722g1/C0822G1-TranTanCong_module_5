@@ -1,0 +1,48 @@
+{
+  "products": [
+    {
+      "name": "trantancong",
+      "price": 23,
+      "description": "24",
+      "category": {
+        "id": 2,
+        "name": "No"
+      },
+      "id": 1
+    },
+    {
+      "name": "cong check",
+      "price": 12,
+      "description": "vipkk",
+      "category": {
+        "id": 2,
+        "name": "No"
+      },
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "vip",
+      "price": 52,
+      "description": "46",
+      "category": {
+        "id": 1,
+        "name": "OK"
+      }
+    }
+  ],
+  "categoryList": [
+    {
+      "id": 1,
+      "name": "OK"
+    },
+    {
+      "id": 2,
+      "name": "No"
+    },
+    {
+      "id": 3,
+      "name": "KK"
+    }
+  ]
+}
