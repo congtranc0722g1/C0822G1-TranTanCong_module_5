@@ -17,16 +17,16 @@
     </div>
 
     <div class="col-lg-4">
-      <form class="d-flex">
-        <input class="form-control me-2 justify-content-between" type="text" placeholder="Nhập tên"
-               aria-label="Search" style="width: 150px" name="name">
-        <input class="form-control me-2 justify-content-between" type="text" placeholder="Nhập địa chỉ"
-               aria-label="Search" style="width: 150px" name="address">
-        <input type="hidden" name="action" value="search">
-        <button class="btn btn-success btn-outline-warning" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-        </svg></button>
-      </form>
+<!--      <form class="d-flex">-->
+<!--        <input class="form-control me-2 justify-content-between" type="text" placeholder="Nhập tên"-->
+<!--               aria-label="Search" style="width: 150px" name="name">-->
+<!--        <input class="form-control me-2 justify-content-between" type="text" placeholder="Nhập địa chỉ"-->
+<!--               aria-label="Search" style="width: 150px" name="address">-->
+<!--        <input type="hidden" name="action" value="search">-->
+<!--        <button class="btn btn-success btn-outline-warning" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">-->
+<!--          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>-->
+<!--        </svg></button>-->
+<!--      </form>-->
     </div>
   </div>
 
@@ -50,20 +50,19 @@
       <tbody>
       <tr *ngFor="let customer of customerList; index as i" class="align text-center">
         <td>{{i}}</td>
-        <td>{{customer.customerType}}</td>
+        <td>{{customer.customerType.name}}</td>
         <td>{{customer.name}}</td>
         <td>{{customer.dateOfBirth | date: "dd/MM/yyyy"}}</td>
-        <td *ngIf="customer.gender">Nam</td>
-        <td *ngIf="!customer.gender">Nữ</td>
+        <td>{{customer.gender ? "Nam" : "Nữ"}}</td>
         <td>{{customer.idCard}}</td>
         <td>{{customer.phone}}</td>
         <td>{{customer.email}}</td>
         <td>{{customer.address}}</td>
         <td>
-          <a class="btn btn-primary" style="width: 100px" routerLink="/customer-edit" role="button">Chỉnh Sửa</a>
+          <button class="btn btn-primary" style="width: 100px" role="button" [routerLink]="['/customer-edit', customer.id]">Chỉnh Sửa</button>
         </td>
         <td><a>
-          <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="temp = customer">
             Xóa
           </button>
         </a></td>
@@ -82,11 +81,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Bạn có muốn xóa
+        Bạn có muốn xóa khách hàng: <label style="color: red">{{temp.name}}</label> không?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-        <button type="button" class="btn btn-primary">Xóa</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteCustomer()">Xóa</button>
       </div>
     </div>
   </div>

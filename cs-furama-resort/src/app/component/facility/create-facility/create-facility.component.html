@@ -12,82 +12,80 @@
         <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
           <div class="card-body p-4 p-md-5">
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">THÊM MỚI DỊCH VỤ</h3>
-            <form>
+            <form [formGroup]="form" (ngSubmit)="addFacility()">
 
 
               <div class="form-outline">
                 <label for="facilityType" class="form-label fs-6">Loại Dịch Vụ</label>
-                <select #facilityType id="facilityType" class="select form-control-lg"
-                        (change)= "showValue(facilityType.value)">
-                  <option value="1">Villa</option>
-                  <option value="2">House</option>
-                  <option value="3">Room</option>
+                <select formControlName="facilityType" id="facilityType" class="select form-control-lg">
+                  <option *ngFor="let facilityType of facilityTypeList" [ngValue]="facilityType">{{facilityType.name}}</option>
                 </select>
               </div>
 
 
               <div class="form-outline">
                 <label class="form-label" for="name">Tên dịch vụ</label>
-                <input type="text" id="name" class="form-control form-control-lg"/>
+                <input formControlName="name" type="text" id="name" class="form-control form-control-lg"/>
               </div>
 
 
               <div class="form-outline">
                 <label class="form-label" for="area">Diện Tích</label>
-                <input type="text" id="area" class="form-control form-control-lg"/>
+                <input formControlName="area" type="number" id="area" class="form-control form-control-lg"/>
               </div>
 
 
               <div class="form-outline datepicker w-100">
                 <label for="cost" class="form-label">Chi Phí Thuê</label>
-                <input type="text" id="cost" class="form-control form-control-lg"/>
+                <input formControlName="cost" type="number" id="cost" class="form-control form-control-lg"/>
               </div>
 
 
               <div class="form-outline datepicker w-100">
                 <label for="maxPeople" class="form-label">Số Người Tối Đa</label>
-                <input type="text" id="maxPeople" class="form-control form-control-lg"/>
+                <input formControlName="maxPeople" type="number" id="maxPeople" class="form-control form-control-lg"/>
               </div>
 
 
               <div class="form-outline mt-3 mb-3">
                 <label for="rentType" class="form-label fs-6">Kiểu Thuê</label>
-                <select id="rentType" class="select form-control-lg">
-                  <option value="1">Giờ</option>
-                  <option value="2">Ngày</option>
-                  <option value="3">Tháng</option>
-                  <option value="4">Năm</option>
+                <select formControlName="rentType" id="rentType" class="select form-control-lg">
+                  <option *ngFor="let rentType of rentTypeList" [ngValue]="rentType">{{rentType.name}}</option>
                 </select>
               </div>
 
 
               <div id="standardRoom" class="form-outline">
                 <label for="standardRoom1" class="form-label">Tiêu Chuẩn Phòng</label>
-                <input type="text" id="standardRoom1" class="form-control form-control-lg"/>
+                <input formControlName="standardRoom" type="text" id="standardRoom1" class="form-control form-control-lg"/>
               </div>
 
 
               <div id="descriptionOtherConvenience" class="form-outline">
-                <label for="descriptionOtherConvenience1" class="form-label">Mô Tả Tiện Nghi
-                  Khác</label>
-                <input type="text" id="descriptionOtherConvenience1"
+                <label for="descriptionOtherConvenience1" class="form-label">Mô Tả Tiện Nghi Khác</label>
+                <input formControlName="descriptionOtherConvenience" type="text" id="descriptionOtherConvenience1"
                        class="form-control form-control-lg"/>
               </div>
 
 
               <div id="poolArea" class="form-outline">
                 <label for="poolArea1" class="form-label">Diện Tích Hồ Bơi</label>
-                <input type="text" id="poolArea1" class="form-control form-control-lg"/>
+                <input formControlName="poolArea" type="number" id="poolArea1" class="form-control form-control-lg"/>
               </div>
 
               <div id="numbersOfFloors" class="form-outline">
                 <label for="numbersOfFloors1" class="form-label">Số Tầng</label>
-                <input type="text" id="numbersOfFloors1" class="form-control form-control-lg"/>
+                <input formControlName="numbersOfFloors" type="number" id="numbersOfFloors1" class="form-control form-control-lg"/>
               </div>
 
-              <div style="display: none" id="facilityFree" class="form-outline">
+              <div id="facilityFree" class="form-outline">
                 <label for="facilityFree1" class="form-label">Dịch Vụ Miễn Phí Đi Kèm</label>
-                <input type="text" id="facilityFree1" class="form-control form-control-lg"/>
+                <input formControlName="facilityFree" type="text" id="facilityFree1" class="form-control form-control-lg"/>
+              </div>
+
+              <div class="form-outline">
+                <label for="image" class="form-label">Hình Ảnh</label>
+                <input formControlName="image" type="text"  id="image" class="form-control form-control-lg"/>
               </div>
 
 

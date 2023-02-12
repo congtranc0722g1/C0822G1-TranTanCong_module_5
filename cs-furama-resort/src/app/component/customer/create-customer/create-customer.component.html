@@ -12,15 +12,14 @@
         <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
           <div class="card-body p-4 p-md-5">
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">THÊM MỚI KHÁCH HÀNG</h3>
-            <form>
-
+            <form [formGroup]="form" (ngSubmit)="addCustomer()">
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <input type="hidden" class="form-control form-control-lg"/>
 
                   <div class="form-outline">
                     <label class="form-label" for="name">Nhập Tên</label>
-                    <input type="text" id="name" class="form-control form-control-lg"/>
+                    <input formControlName="name" type="text" id="name" class="form-control form-control-lg"/>
                   </div>
 
                 </div>
@@ -28,7 +27,7 @@
 
                   <div class="form-outline">
                     <label class="form-label" for="dateOfBirth">Ngày Sinh</label>
-                    <input type="date" id="dateOfBirth" class="form-control-lg"/>
+                    <input type="date" formControlName="dateOfBirth" id="dateOfBirth" class="form-control-lg"/>
                   </div>
 
                 </div>
@@ -39,7 +38,7 @@
 
                   <div class="form-outline datepicker w-100">
                     <label for="idCard" class="form-label">CMND</label>
-                    <input type="text" id="idCard" class="form-control form-control-lg"/>
+                    <input type="text" formControlName="idCard" id="idCard" class="form-control form-control-lg"/>
                   </div>
 
                 </div>
@@ -48,12 +47,12 @@
                   <h6 class="mb-2 pb-1">Giới Tính: </h6>
 
                   <div class="form-check form-check-inline">
-                    <input checked id="gender" class="form-check-input" type="radio" value="true"/>
+                    <input formControlName="gender" id="gender" class="form-check-input" type="radio" [value]="true"/>
                     <label for="gender" class="form-check-label">Nam</label>
                   </div>
 
                   <div class="form-check form-check-inline">
-                    <input id="gender1" class="form-check-input" type="radio" value="false"/>
+                    <input formControlName="gender" id="gender1" class="form-check-input" type="radio" [value]="false"/>
                     <label class="form-check-label" for="gender1">Nữ</label>
                   </div>
 
@@ -65,7 +64,7 @@
 
                   <div class="form-outline">
                     <label for="phone" class="form-label">Số Điện Thoại</label>
-                    <input type="text" id="phone" class="form-control form-control-lg"/>
+                    <input type="text" formControlName="phone" id="phone" class="form-control form-control-lg"/>
                   </div>
 
                 </div>
@@ -73,7 +72,7 @@
 
                   <div class="form-outline">
                     <label for="email" class="form-label">Email</label>
-                    <input type="text" id="email" class="form-control form-control-lg"/>
+                    <input type="text" formControlName="email" id="email" class="form-control form-control-lg"/>
                   </div>
 
                 </div>
@@ -84,7 +83,7 @@
 
                   <div class="form-outline">
                     <label for="address" class="form-label">Địa Chỉ</label>
-                    <input type="text" id="address" class="form-control form-control-lg"/>
+                    <input type="text" formControlName="address" id="address" class="form-control form-control-lg"/>
                   </div>
 
                 </div>
@@ -99,19 +98,15 @@
               <div class="row">
                 <div class="col-12">
                   <label for="customerType" class="form-label fs-6">Loại Khách Hàng</label>
-                  <select id="customerType" class="select form-control-md">
-                    <option value="1" selected>Thành Viên</option>
-                    <option value="2">Vàng</option>
-                    <option value="4">Bạc</option>
-                    <option value="5">Bạch Kim</option>
-                    <option value="6">Kim Cương</option>
+                  <select formControlName="customerType" id="customerType" class="select form-control-md">
+                    <option *ngFor="let customerType of customerTypeList" [ngValue]="customerType">{{customerType.name}}</option>
                   </select>
 
                 </div>
               </div>
 
               <div class="mt-4 pt-2">
-                <button class="btn btn-primary btn-lg" type="submit">Lưu</button>
+                <button class="btn btn-primary btn-lg">Lưu</button>
               </div>
             </form>
           </div>

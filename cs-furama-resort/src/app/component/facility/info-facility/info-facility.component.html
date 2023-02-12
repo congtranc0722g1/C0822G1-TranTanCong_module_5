@@ -1,0 +1,62 @@
+<!--modal chi tiết-->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Chi tiết dịch vụ</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table>
+          <tr>
+            <td>Tên dịch vụ:</td>
+            <td>{{detail.name}}</td>
+          </tr>
+          <tr>
+            <td>Loại dịch vụ: </td>
+            <td>{{detail.facilityType?.name}}</td>
+          </tr>
+          <tr>
+            <td>Diện tích: </td>
+            <td>{{detail.area}}</td>
+          </tr>
+          <tr>
+            <td>Số tiền đặt cọc:</td>
+            <td>{{detail.cost}}</td>
+          </tr>
+          <tr>
+            <td>Số người tối đa: </td>
+            <td>{{detail.maxPeople}}</td>
+          </tr>
+          <tr>
+            <td>Kiểu thuê: </td>
+            <td>{{detail.rentType?.name}}</td>
+          </tr>
+          <tr>
+            <td>Tiêu chuẩn phòng: </td>
+            <td>{{detail.standardRoom}}</td>
+          </tr>
+          <tr>
+            <td>Mô tả tiện nghi khác: </td>
+            <td>{{detail.descriptionOtherConvenience}}</td>
+          </tr>
+          <tr>
+            <td>Diện tích hồ bơi: </td>
+            <td>{{detail.poolArea}}</td>
+          </tr>
+          <tr>
+            <td>Số tầng: </td>
+            <td>{{detail.numbersOfFloors}}</td>
+          </tr>
+          <tr>
+            <td>Dịch vụ miễn phí đi kèm: </td>
+            <td>{{detail.facilityFree}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Xong</button>
+      </div>
+    </div>
+  </div>
+</div>

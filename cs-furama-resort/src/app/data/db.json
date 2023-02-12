@@ -1,0 +1,172 @@
+{
+  "customer": [
+    {
+      "id": 2,
+      "name": "Trần Tấn Công",
+      "dateOfBirth": "1997-10-20",
+      "gender": true,
+      "idCard": "3464367457",
+      "phone": "097886676",
+      "email": "trantancong@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 4,
+        "name": "Bạc"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Ngô Văn Tâm",
+      "dateOfBirth": "1234-04-12",
+      "gender": false,
+      "idCard": "2354235",
+      "phone": "235235",
+      "email": "tamngo@gmail.com",
+      "address": "Biến Tre",
+      "customerType": {
+        "id": 1,
+        "name": "Kim Cương"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Hào",
+      "dateOfBirth": "1111-11-11",
+      "gender": false,
+      "idCard": "6434312133",
+      "phone": "8765434567",
+      "email": "cong@gmail.com",
+      "address": "Đà",
+      "customerType": {
+        "id": 4,
+        "name": "Bạc"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Nguyễn",
+      "dateOfBirth": "1111-10-20",
+      "gender": "false",
+      "idCard": "6434312134",
+      "phone": "0123659874",
+      "email": "kiuchoibe246@gmail.com",
+      "address": "294 Nguyễn Tất Thành, Đà Nẵng",
+      "customerType": {
+        "id": 2,
+        "name": "Bạch Kim"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Nguyễn Văn Tâm",
+      "dateOfBirth": "2222-02-20",
+      "gender": false,
+      "idCard": "6434312134",
+      "phone": "0945423362",
+      "email": "trantancol@gmail.com",
+      "address": "294 Nguyễn Tất Thành, Đà Nẵng",
+      "customerType": {
+        "id": 2,
+        "name": "Bạch Kim"
+      }
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Kim Cương"
+    },
+    {
+      "id": 2,
+      "name": "Bạch Kim"
+    },
+    {
+      "id": 3,
+      "name": "Vàng"
+    },
+    {
+      "id": 4,
+      "name": "Bạc"
+    },
+    {
+      "id": 5,
+      "name": "Khách Hàng"
+    }
+  ],
+  "rent-type": [
+    {
+      "id": 1,
+      "name": "Năm"
+    },
+    {
+      "id": 2,
+      "name": "Tháng"
+    },
+    {
+      "id": 3,
+      "name": "Ngày"
+    },
+    {
+      "id": 4,
+      "name": "Giờ"
+    }
+  ],
+  "facility-type": [
+    {
+      "id": 1,
+      "name": "Villa"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    },
+    {
+      "id": 3,
+      "name": "Room"
+    }
+  ],
+  "facility": [
+    {
+      "id": 2,
+      "name": "Farma",
+      "facilityType": {
+        "id": 2,
+        "name": "House"
+      },
+      "area": "30",
+      "cost": "20000",
+      "maxPeople": "10",
+      "rentType": {
+        "id": 2,
+        "name": "Tháng"
+      },
+      "standardRoom": "VIP",
+      "descriptionOtherConvenience": "dep",
+      "poolArea": "09",
+      "numbersOfFloors": "5",
+      "facilityFree": "Ăn sáng",
+      "image": "https://phulong.com/UploadFiles/Images/FURAMA%2020%20NAM.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Room No 1",
+      "facilityType": {
+        "id": 3,
+        "name": "Room"
+      },
+      "area": 300,
+      "cost": 1000000,
+      "maxPeople": 7,
+      "rentType": {
+        "id": 1,
+        "name": "Năm"
+      },
+      "standardRoom": "VIP",
+      "descriptionOtherConvenience": "View Sông",
+      "poolArea": 45,
+      "numbersOfFloors": 3,
+      "facilityFree": "Ăn Tối Miễn Phí",
+      "image": "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/06/Review-Furama-Resort-Da-Nang-1.jpg"
+    }
+  ]
+}

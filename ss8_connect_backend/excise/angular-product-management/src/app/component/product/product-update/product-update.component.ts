@@ -19,7 +19,7 @@ export class ProductUpdateComponent implements OnInit {
     category: new FormControl()
   });
 
-  id: number;
+
   categoryList: Category[] = [];
 
   public compareWith(object1: Category, object2: Category): boolean {

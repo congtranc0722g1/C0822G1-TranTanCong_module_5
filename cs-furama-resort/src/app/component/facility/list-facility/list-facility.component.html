@@ -17,46 +17,30 @@
       </a>
     </div>
 
-    <div class="col-lg-4">
-      <form class="d-flex">
-        <input class="form-control me-2 justify-content-between" type="text" placeholder="Nhập tên dịch vụ"
-               aria-label="Search" style="width: 150px" name="name">
-        <input class="form-control me-2 justify-content-between" type="text" placeholder="Nhập loại dịch vụ"
-               aria-label="Search" style="width: 150px" name="address">
-        <input type="hidden" name="action" value="search">
-        <button class="btn btn-success btn-outline-warning" type="submit">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-               class="bi bi-search" viewBox="0 0 16 16">
-            <path
-              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-          </svg>
-        </button>
-      </form>
-    </div>
   </div>
 
 <!--  *ngFor="let temp of facilityList"-->
   <div class="row margin g-2">
-      <div *ngFor="let temp of facilityList" class="col-lg-4">
+      <div *ngFor="let facility of facilityList" class="col-lg-4">
         <div class="card">
-          <img src="{{temp.image}}" height="300px" class="card-img-top" alt="...">
+          <img src="{{facility.image}}" height="300px" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">{{temp.name}}</h5>
-            <p class="card-text">Diện Tích: {{temp.area}} m2</p>
+            <h5 class="card-title">{{facility.name}}</h5>
+            <p class="card-text">Diện Tích: {{facility.area}} m2</p>
             <div class="row">
               <div class="col-lg-4">
-                <a class="btn btn-primary" style="width: 100px" routerLink="/facility-edit" role="button">Chỉnh
+                <a class="btn btn-primary" style="width: 100px" [routerLink]="['/facility-edit', facility.id]" role="button">Chỉnh
                   Sửa</a>
               </div>
 
               <div class="col-lg-3">
                 <a>
-                  <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="temp = facility">
                     Xóa
                   </button>
                 </a>
               </div>
-                <button class="btn btn-secondary" style="width: 80px">Chi Tiết</button>
+                <button class="btn btn-secondary" style="width: 80px" (click)="temp = facility" data-bs-toggle="modal" data-bs-target="#exampleModal1">Chi Tiết</button>
 
             </div>
           </div>
@@ -68,6 +52,7 @@
   <br>
 </div>
 
+<!--modal xóa-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -76,14 +61,15 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Bạn có muốn xóa
+        Bạn có muốn xóa dịch vụ: <label style="color: red">{{temp.name}}</label> không?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-        <button type="button" class="btn btn-primary">Xóa</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteFacility()">Xóa</button>
       </div>
     </div>
   </div>
 </div>
+<app-info-facility [detail]="temp"></app-info-facility>
 </body>
 </html>

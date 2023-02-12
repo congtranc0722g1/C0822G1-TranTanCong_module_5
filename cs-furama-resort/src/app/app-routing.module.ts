@@ -8,19 +8,17 @@ import {ListCustomerComponent} from "./component/customer/list-customer/list-cus
 import {CreateCustomerComponent} from "./component/customer/create-customer/create-customer.component";
 import {EditCustomerComponent} from "./component/customer/edit-customer/edit-customer.component";
 import {ListContractComponent} from "./component/contract/list-contract/list-contract.component";
-import {CreateContractComponent} from "./component/contract/create-contract/create-contract.component";
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'facility', component: ListFacilityComponent},
-  {path: 'facility-edit', component: EditFacilityComponent},
+  {path: 'facility-edit/:id', component: EditFacilityComponent},
   {path: 'facility-create', component: CreateFacilityComponent},
   {path: 'customer', component: ListCustomerComponent},
   {path: 'customer-create', component: CreateCustomerComponent},
-  {path: 'customer-edit', component: EditCustomerComponent},
-  {path: 'contract', component: ListContractComponent},
-  {path: 'contract-create',component: CreateContractComponent}
+  {path: 'customer-edit/:id', component: EditCustomerComponent},
+  {path: 'contract', component: ListContractComponent}
 ];
 
 @NgModule({

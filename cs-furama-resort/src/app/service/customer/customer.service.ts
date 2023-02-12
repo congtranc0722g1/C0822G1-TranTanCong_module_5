@@ -1,20 +1,32 @@
 import { Injectable } from '@angular/core';
 import {Customer} from "../../model/customer/customer";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
 
-  customerList: Customer[] = [
-    {id: 1, name: "Công", dateOfBirth: "1999-10-20", gender: true, customerType: "Vàng", idCard: "767656787", phone: "09876567453", email: "trantancong@gmail.com", address: "Quảng Nam"},
-    {id: 2, name: "Lý", dateOfBirth: "1998-06-19", gender: false, customerType: "Bạc", idCard: "864576479", phone: "09896567467", email: "Ngovanatm@gmail.com", address: "Đà Nẵng"},
-    {id: 3, name: "Tiến", dateOfBirth: "1997-04-01", gender: true, customerType: "Kim Cương", idCard: "347653465", phone: "09433567498", email: "alo11234@gmail.com", address: "Quảng Ngãi"}
-  ]
+  constructor(private httpClient: HttpClient) { }
 
-  constructor() { }
+  getAll(): Observable<Customer[]>{
+    return this.httpClient.get<Customer[]>("http://localhost:3000/customer");
+  }
 
-  getAll(){
-    return this.customerList;
+  addCustomer(customer: any) {
+    return this.httpClient.post("http://localhost:3000/customer", customer);
+  }
+
+  findById(id: number): Observable<Customer>{
+    return this.httpClient.get<Customer>("http://localhost:3000/customer/" + id);
+  }
+
+  updateCustomer(id: number, customer: Customer) {
+    return this.httpClient.put("http://localhost:3000/customer/" + id, customer);
+  }
+
+  deleteCustomer(id: number) {
+    return this.httpClient.delete<Customer>("http://localhost:3000/customer/" + id);
   }
 }
