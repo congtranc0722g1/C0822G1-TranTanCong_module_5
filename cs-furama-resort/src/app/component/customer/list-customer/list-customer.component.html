@@ -19,10 +19,10 @@
     <div class="col-lg-8">
       <input type="text" #name placeholder="Nhập Tên" class="me-1">
       <select #customerType class="me-1" >
-        <option>Nhập Loại khách hàng</option>
+        <option value="">Nhập Loại khách hàng</option>
         <option *ngFor="let customerType of customerTypeList" [value]="customerType.name">{{customerType.name}}</option>
       </select>
-      <button class="btn btn-primary" (click)="searchCustomer(name.value, customerType.value)">Tìm kiếm</button>
+      <button class="btn btn-primary" (click)="search(name.value, customerType.value)">Tìm kiếm</button>
     </div>
   </div>
 

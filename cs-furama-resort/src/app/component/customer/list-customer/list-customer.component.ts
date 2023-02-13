@@ -16,8 +16,10 @@ export class ListCustomerComponent implements OnInit {
   temp: Customer = {};
   customerTypeList: CustomerType[] = [];
 
+  name: string = "";
+  customerType: string = "";
+
   constructor(private customerService: CustomerService, private customerTypeService: CustomerTypeService) {
-    this.getAll();
 
     this.customerTypeService.getAll().subscribe(next => {
       this.customerTypeList = next;
@@ -25,6 +27,7 @@ export class ListCustomerComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getAll();
   }
 
   getAll() {
@@ -43,9 +46,21 @@ export class ListCustomerComponent implements OnInit {
     }
   }
 
-  searchCustomer(name: string, customerType: string) {
-    this.customerService.searchName(name, customerType).subscribe(next => {
-      this.customerList = next;
-    })
+  search(name: string, customerType: string){
+    if (name === "" && customerType === ""){
+      this.getAll();
+    }else if(name !== "" && customerType !== ""){
+      this.customerService.searchTwo(name, customerType).subscribe(next => {
+        this.customerList = next;
+      });
+    }else if (name === "" && customerType !== ""){
+      this.customerService.searchFacility(customerType).subscribe(next => {
+        this.customerList = next;
+      })
+    }else {
+      this.customerService.searchName(name).subscribe(next => {
+        this.customerList = next;
+      })
+    }
   }
 }

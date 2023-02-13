@@ -1,4 +1,4 @@
-<a routerLink='/product-create'>Tạo mới sản phẩm</a>
+<a routerLink='/products-create'>Tạo mới sản phẩm</a>
 <h1>Danh sách sản phẩm</h1>
 <table class="table table-info">
   <thead>
@@ -19,7 +19,7 @@
     <td>{{product.price}}</td>
     <td>{{product.description}}</td>
     <td>{{product.category.name}}</td>
-    <td><button class="btn btn-primary" [routerLink]="['/product-edit', product.id]">Chỉnh sửa</button></td>
+    <td><button class="btn btn-primary" [routerLink]="['/products-edit', product.id]">Chỉnh sửa</button></td>
     <td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="temp = product">Xóa</button></td>
   </tr>
   </tbody>

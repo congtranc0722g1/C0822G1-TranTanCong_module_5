@@ -31,7 +31,15 @@ export class CustomerService {
     return this.httpClient.delete<Customer>("http://localhost:3000/customer/" + id);
   }
 
-  searchName(name: string, customerType: string): Observable<Customer[]> {
+  searchTwo(name: string, customerType: string): Observable<Customer[]>{
     return this.httpClient.get<Customer[]>("http://localhost:3000/customer?name_like=" + name + '&customerType.name=' + customerType);
+  }
+
+  searchFacility(customerType: string) {
+    return this.httpClient.get<Customer[]>("http://localhost:3000/customer?customerType.name=" + customerType);
+  }
+
+  searchName(name: string) {
+    return this.httpClient.get<Customer[]>("http://localhost:3000/customer?name_like=" + name);
   }
 }
