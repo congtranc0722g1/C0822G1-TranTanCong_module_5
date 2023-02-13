@@ -18,46 +18,55 @@
               <div class="form-outline">
                 <label for="facilityType" class="form-label fs-6">Loại Dịch Vụ</label>
                 <select formControlName="facilityType" id="facilityType" class="select form-control-lg">
+                  <option value="">Chọn loại dịch vụ</option>
                   <option *ngFor="let facilityType of facilityTypeList" [ngValue]="facilityType">{{facilityType.name}}</option>
                 </select>
+                <p style="color: red" *ngIf="form.controls.facilityType.hasError('required') && form.controls.facilityType.touched">Không được để trống</p>
               </div>
 
 
               <div class="form-outline">
                 <label class="form-label" for="name">Tên dịch vụ</label>
                 <input formControlName="name" type="text" id="name" class="form-control form-control-lg"/>
+                <p style="color: red" *ngIf="form.controls.name.hasError('required') && form.controls.name.touched">Không được để trống</p>
               </div>
 
 
               <div class="form-outline">
                 <label class="form-label" for="area">Diện Tích</label>
                 <input formControlName="area" type="number" id="area" class="form-control form-control-lg"/>
+                <p style="color: red" *ngIf="form.controls.area.hasError('required') && form.controls.area.touched">Không được để trống</p>
               </div>
 
 
               <div class="form-outline datepicker w-100">
                 <label for="cost" class="form-label">Chi Phí Thuê</label>
                 <input formControlName="cost" type="number" id="cost" class="form-control form-control-lg"/>
+                <p style="color: red" *ngIf="form.controls.cost.hasError('required') && form.controls.cost.touched">Không được để trống</p>
               </div>
 
 
               <div class="form-outline datepicker w-100">
                 <label for="maxPeople" class="form-label">Số Người Tối Đa</label>
                 <input formControlName="maxPeople" type="number" id="maxPeople" class="form-control form-control-lg"/>
+                <p style="color: red" *ngIf="form.controls.maxPeople.hasError('required') && form.controls.maxPeople.touched">Không được để trống</p>
               </div>
 
 
               <div class="form-outline mt-3 mb-3">
                 <label for="rentType" class="form-label fs-6">Kiểu Thuê</label>
                 <select formControlName="rentType" id="rentType" class="select form-control-lg">
+                  <option value="">Chọn kiểu thuê</option>
                   <option *ngFor="let rentType of rentTypeList" [ngValue]="rentType">{{rentType.name}}</option>
                 </select>
+                <p style="color: red" *ngIf="form.controls.rentType.hasError('required') && form.controls.rentType.touched">Không được để trống</p>
               </div>
 
 
               <div id="standardRoom" class="form-outline">
                 <label for="standardRoom1" class="form-label">Tiêu Chuẩn Phòng</label>
                 <input formControlName="standardRoom" type="text" id="standardRoom1" class="form-control form-control-lg"/>
+                <p style="color: red" *ngIf="form.controls.standardRoom.hasError('required') && form.controls.standardRoom.touched">Không được để trống</p>
               </div>
 
 
@@ -65,32 +74,39 @@
                 <label for="descriptionOtherConvenience1" class="form-label">Mô Tả Tiện Nghi Khác</label>
                 <input formControlName="descriptionOtherConvenience" type="text" id="descriptionOtherConvenience1"
                        class="form-control form-control-lg"/>
+                <p style="color: red" *ngIf="form.controls.descriptionOtherConvenience.hasError('required') && form.controls.descriptionOtherConvenience.touched">Không được để trống</p>
               </div>
 
 
               <div id="poolArea" class="form-outline">
                 <label for="poolArea1" class="form-label">Diện Tích Hồ Bơi</label>
                 <input formControlName="poolArea" type="number" id="poolArea1" class="form-control form-control-lg"/>
+                <p style="color: red" *ngIf="form.controls.poolArea.hasError('required') && form.controls.poolArea.touched">Không được để trống</p>
+                <p style="color: red" *ngIf="form.controls.poolArea.hasError('pattern')">Diện tích hồ bơi phải là số nguyên dương</p>
               </div>
 
               <div id="numbersOfFloors" class="form-outline">
                 <label for="numbersOfFloors1" class="form-label">Số Tầng</label>
                 <input formControlName="numbersOfFloors" type="number" id="numbersOfFloors1" class="form-control form-control-lg"/>
+                <p style="color: red" *ngIf="form.controls.numbersOfFloors.hasError('required') && form.controls.numbersOfFloors.touched">Không được để trống</p>
+                <p style="color: red" *ngIf="form.controls.numbersOfFloors.hasError('pattern')">Số tầng phải là số nguyên dương</p>
               </div>
 
               <div id="facilityFree" class="form-outline">
                 <label for="facilityFree1" class="form-label">Dịch Vụ Miễn Phí Đi Kèm</label>
                 <input formControlName="facilityFree" type="text" id="facilityFree1" class="form-control form-control-lg"/>
+                <p style="color: red" *ngIf="form.controls.facilityFree.hasError('required') && form.controls.facilityFree.touched">Không được để trống</p>
               </div>
 
               <div class="form-outline">
                 <label for="image" class="form-label">Hình Ảnh</label>
                 <input formControlName="image" type="text"  id="image" class="form-control form-control-lg"/>
+                <p style="color: red" *ngIf="form.controls.image.hasError('required') && form.controls.image.touched">Không được để trống</p>
               </div>
 
 
               <div class="mt-4 pt-2">
-                <button class="btn btn-primary btn-lg" type="submit">Lưu</button>
+                <button class="btn btn-primary btn-lg" [disabled]="!form.valid">Lưu</button>
               </div>
             </form>
           </div>

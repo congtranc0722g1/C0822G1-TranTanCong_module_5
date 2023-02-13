@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Customer} from "../../model/customer/customer";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {CustomerType} from "../../model/customer/customer-type";
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +29,9 @@ export class CustomerService {
 
   deleteCustomer(id: number) {
     return this.httpClient.delete<Customer>("http://localhost:3000/customer/" + id);
+  }
+
+  searchName(name: string, customerType: string): Observable<Customer[]> {
+    return this.httpClient.get<Customer[]>("http://localhost:3000/customer?name_like=" + name + '&customerType.name=' + customerType);
   }
 }

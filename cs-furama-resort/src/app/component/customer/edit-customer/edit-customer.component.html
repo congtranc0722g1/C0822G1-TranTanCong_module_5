@@ -21,6 +21,8 @@
                     <label class="form-label" for="name">Nhập Tên</label>
                     <input formControlName="name" type="text" id="name"
                            class="form-control form-control-lg"/>
+                    <p style="color: red" *ngIf="form.controls.name.hasError('required') && form.controls.name.touched">Không được để trống</p>
+                    <p style="color: red" *ngIf="form.controls.name.hasError('pattern')">Tên không đúng định dạng</p>
                   </div>
 
                 </div>
@@ -29,6 +31,7 @@
                   <div class="form-outline">
                     <label class="form-label" for="dateOfBirth">Ngày Sinh</label>
                     <input formControlName="dateOfBirth" type="date" id="dateOfBirth" class="form-control-lg"/>
+                    <p style="color: red" *ngIf="form.controls.dateOfBirth.hasError('required') && form.controls.dateOfBirth.dirty">Không được để trống</p>
                   </div>
 
                 </div>
@@ -41,6 +44,8 @@
                     <label for="idCard" class="form-label">CMND</label>
                     <input formControlName="idCard" type="text" id="idCard"
                            class="form-control form-control-lg"/>
+                    <p style="color: red" *ngIf="form.controls.idCard.hasError('required') && form.controls.idCard.dirty">Không được để trống</p>
+                    <p style="color: red" *ngIf="form.controls.idCard.hasError('pattern')">Số CMND không đúng định dạng</p>
                   </div>
 
                 </div>
@@ -58,6 +63,8 @@
                     <label class="form-check-label" for="gender1">Nữ</label>
                   </div>
 
+                  <p style="color: red" *ngIf="form.controls.gender.hasError('required') && form.controls.gender.dirty">Không được để trống</p>
+
                 </div>
               </div>
 
@@ -68,6 +75,9 @@
                     <label for="phone" class="form-label">Số Điện Thoại</label>
                     <input formControlName="phone" type="text" id="phone"
                            class="form-control form-control-lg"/>
+
+                    <p style="color: red" *ngIf="form.controls.phone.hasError('required') && form.controls.phone.dirty">Không được để trống</p>
+                    <p style="color: red" *ngIf="form.controls.phone.hasError('pattern')">Số điện thoại không đúng định dạng</p>
                   </div>
 
                 </div>
@@ -77,6 +87,8 @@
                     <label for="email" class="form-label">Email</label>
                     <input formControlName="email" type="text" id="email"
                            class="form-control form-control-lg"/>
+                    <p style="color: red" *ngIf="form.controls.email.hasError('required') && form.controls.email.dirty">Không được để trống</p>
+                    <p style="color: red" *ngIf="form.controls.email.hasError('pattern')">Email không đúng định dạng</p>
                   </div>
 
                 </div>
@@ -89,6 +101,7 @@
                     <label for="address" class="form-label">Địa Chỉ</label>
                     <input formControlName="address" type="text" id="address"
                            class="form-control form-control-lg"/>
+                    <p style="color: red" *ngIf="form.controls.address.hasError('required') && form.controls.address.dirty">Không được để trống</p>
                   </div>
 
                 </div>
@@ -106,6 +119,7 @@
                   <select formControlName="customerType" id="customerType" class="select form-control-md" [compareWith]="compareWith">
                     <option *ngFor="let customerType of customerTypeList" [ngValue]="customerType">{{customerType.name}}</option>
                   </select>
+                  <p style="color: red" *ngIf="form.controls.customerType.hasError('required') && form.controls.customerType.dirty">Không được để trống</p>
 
                 </div>
               </div>

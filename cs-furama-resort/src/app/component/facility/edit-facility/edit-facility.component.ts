@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FacilityType} from "../../../model/facility/facility-type";
 import {RentType} from "../../../model/facility/rent-type";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FacilityService} from "../../../service/facility/facility.service";
 import {FacilityTypeService} from "../../../service/facility/facility-type.service";
@@ -19,27 +19,29 @@ export class EditFacilityComponent implements OnInit {
 
   rentTypeList: RentType[] = [];
 
-  form: FormGroup = new FormGroup({
-    id: new FormControl(),
-    name: new FormControl(),
-    facilityType: new FormControl(),
-    area: new FormControl(),
-    cost: new FormControl(),
-    maxPeople: new FormControl(),
-    rentType: new FormControl(),
-    standardRoom: new FormControl(),
-    descriptionOtherConvenience: new FormControl(),
-    poolArea: new FormControl(),
-    numbersOfFloors: new FormControl(),
-    facilityFree: new FormControl(),
-    image: new FormControl(),
-  });
+  form: FormGroup;
 
   public compareWith(object1: Facility, object2: Facility) {
     return object1 && object2 ? object1.id === object2.id : object1 === object2;
   }
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private facilityService: FacilityService, private facilityTypeService: FacilityTypeService, private  rentTypeService: RentTypeService) {
+    this.form = new FormGroup({
+      id: new FormControl("", [Validators.required]),
+      name: new FormControl("", [Validators.required]),
+      facilityType: new FormControl("", [Validators.required]),
+      area: new FormControl("", [Validators.required]),
+      cost: new FormControl("", [Validators.required]),
+      maxPeople: new FormControl("", [Validators.required]),
+      rentType: new FormControl("", [Validators.required]),
+      standardRoom: new FormControl("", [Validators.required]),
+      descriptionOtherConvenience: new FormControl("", [Validators.required]),
+      poolArea: new FormControl("", [Validators.required, Validators.pattern("^\\d+$")]),
+      numbersOfFloors: new FormControl("", [Validators.required, Validators.pattern("^\\d+$")]),
+      facilityFree: new FormControl("", [Validators.required]),
+      image: new FormControl("", [Validators.required]),
+    });
+
     this.activatedRoute.paramMap.subscribe(next => {
       const id = +next.get("id");
       this.getFacility(id);
@@ -58,11 +60,14 @@ export class EditFacilityComponent implements OnInit {
   }
 
   updateFacility() {
-    const facility = this.form.value;
-    this.facilityService.updateFacility(facility.id, facility).subscribe(next => {
-      this.router.navigateByUrl("facility");
-      alert("Chỉnh sửa thành công");
-    })
+    if (this.form.valid){
+      const facility = this.form.value;
+      this.facilityService.updateFacility(facility.id, facility).subscribe(next => {
+        this.router.navigateByUrl("facility");
+        alert("Chỉnh sửa thành công");
+      });
+    }
+
   }
 
   private getFacility(id: number) {
