@@ -1,0 +1,66 @@
+{
+  "benhAn": [
+    {
+      "id": 1,
+      "ngayNhapVien": "2022-09-10",
+      "ngayRaVien": "2022-09-11",
+      "lyDo": "đau bụng quá",
+      "phuongPhapDieuTri": "Mổ123423",
+      "bacSi": "Trần Văn Tiến",
+      "benhNhan": {
+        "id": 1,
+        "ten": "Ngô Quốc"
+      }
+    },
+    {
+      "id": 2,
+      "ngayNhapVien": "2022-09-10",
+      "ngayRaVien": "2022-09-11",
+      "lyDo": "đau bụng quá",
+      "phuongPhapDieuTri": "Mổ",
+      "bacSi": "Trần Văn Tiến",
+      "benhNhan": {
+        "id": 1,
+        "ten": "Ngô Quốc"
+      }
+    },
+    {
+      "id": 3,
+      "ngayNhapVien": "2022-09-10",
+      "ngayRaVien": "2022-09-11",
+      "lyDo": "đau bụng quá đi",
+      "phuongPhapDieuTri": "Mổ",
+      "bacSi": "Trần Văn Tiến",
+      "benhNhan": {
+        "id": 1,
+        "ten": "Ngô Quốc"
+      }
+    },
+    {
+      "id": 4,
+      "ngayNhapVien": "2022-09-10",
+      "ngayRaVien": "2022-09-11",
+      "lyDo": "đau bụng",
+      "phuongPhapDieuTri": "Mổ111111111",
+      "bacSi": "Trần Văn Tiến",
+      "benhNhan": {
+        "id": 1,
+        "ten": "Ngô Quốc"
+      }
+    }
+  ],
+  "benhNhan": [
+    {
+      "id": 1,
+      "ten": "Ngô Quốc"
+    },
+    {
+      "id": 2,
+      "ten": "Ngô Tâm"
+    },
+    {
+      "id": 3,
+      "ten": "Ngô Nga"
+    }
+  ]
+}

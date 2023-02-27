@@ -11,7 +11,10 @@ export class ListContractComponent implements OnInit {
 
   contractList: Contract[] = [];
 
-  constructor(private contractService: ContractService) { }
+  constructor(private contractService: ContractService) {
+    console.log(this.getAll());
+    this.getAll();
+  }
 
   ngOnInit(): void {
   }

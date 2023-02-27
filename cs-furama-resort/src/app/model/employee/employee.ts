@@ -6,4 +6,5 @@ export interface Employee {
   salary: number;
   phone: string;
   email: string;
+  address: string;
 }

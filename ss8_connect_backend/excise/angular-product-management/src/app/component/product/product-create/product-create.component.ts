@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from '../../../service/product.service';
-import {FormArray, FormControl, FormGroup} from '@angular/forms';
+import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
 import {CategoryService} from '../../../service/category.service';
 import {Category} from '../../../model/category';
 import {Router} from '@angular/router';
@@ -16,10 +16,10 @@ export class ProductCreateComponent implements OnInit {
 
   constructor(private productService: ProductService, private categoryService: CategoryService, private router: Router) {
     this.form = new FormGroup({
-      name: new FormControl(),
-      price: new FormControl(),
-      description: new FormControl(),
-      category: new FormControl()
+      name: new FormControl("", [Validators.required]),
+      price: new FormControl("", [Validators.required]),
+      description: new FormControl("", [Validators.required]),
+      category: new FormControl("", [Validators.required])
     }),
       this.categoryService.getAll().subscribe(next => {
         console.log(next);

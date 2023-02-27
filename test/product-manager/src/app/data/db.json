@@ -1,0 +1,44 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": "json-server",
+      "price": "typicode",
+      "company": "ok",
+      "category": {
+        "id": 1,
+        "name": "some"
+      }
+    },
+    {
+      "id": 2,
+      "name": "36",
+      "price": 523,
+      "company": "235",
+      "category": {
+        "id": 1,
+        "name": "some"
+      }
+    },
+    {
+      "id": 3,
+      "name": "333",
+      "price": 333,
+      "company": "333",
+      "category": {
+        "id": 2,
+        "name": "thabsk"
+      }
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "some"
+    },
+    {
+      "id": 2,
+      "name": "thabsk"
+    }
+  ]
+}

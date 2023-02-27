@@ -287,5 +287,69 @@
       "facilityFree": "Ăn sáng",
       "image": "https://phulong.com/UploadFiles/Images/FURAMA%2020%20NAM.jpg"
     }
+  ],
+  "employee": [
+    {
+      "id": 1,
+      "name": "Công",
+      "dateOfBirth": "1999-10-20",
+      "idCard": "098778765",
+      "salary": 1000,
+      "phone": "0989876554",
+      "email": "trantancong@gmail.com",
+      "address": "Quảng Nam"
+    }
+  ],
+  "contract": [
+    {
+      "startDay": "2023-02-14",
+      "endDay": "2023-02-16",
+      "deposit": 56000,
+      "employee": {
+        "id": 1,
+        "name": "Công",
+        "dateOfBirth": "1999-10-20",
+        "idCard": "098778765",
+        "salary": 1000,
+        "phone": "0989876554",
+        "email": "trantancong@gmail.com",
+        "address": "Quảng Nam"
+      },
+      "customer": {
+        "id": 2,
+        "name": "Trần Tấn Công",
+        "dateOfBirth": "1997-10-20",
+        "gender": true,
+        "idCard": "3464367457",
+        "phone": "097886676",
+        "email": "trantancong@gmail.com",
+        "address": "Đà Nẵng",
+        "customerType": {
+          "id": 4,
+          "name": "Bạc"
+        }
+      },
+      "facility": {
+        "id": 2,
+        "name": "Farma11",
+        "facilityType": {
+          "id": 2,
+          "name": "House"
+        },
+        "area": "30",
+        "cost": "20000",
+        "maxPeople": "10",
+        "rentType": {
+          "id": 2,
+          "name": "Tháng"
+        },
+        "standardRoom": "VIP",
+        "descriptionOtherConvenience": "dep",
+        "poolArea": "09",
+        "numbersOfFloors": "5",
+        "facilityFree": "Ăn sáng",
+        "image": "https://phulong.com/UploadFiles/Images/FURAMA%2020%20NAM.jpg"
+      }
+    }
   ]
 }

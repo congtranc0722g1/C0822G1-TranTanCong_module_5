@@ -18,6 +18,7 @@ export class ListCustomerComponent implements OnInit {
 
   name: string = "";
   customerType: string = "";
+  page: string | number;
 
   constructor(private customerService: CustomerService, private customerTypeService: CustomerTypeService) {
 

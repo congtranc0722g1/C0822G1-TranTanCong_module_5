@@ -4,6 +4,7 @@
     <tr>
       <td>Tên sản phẩm:</td>
       <td><input type="text" formControlName="name"></td>
+      <label style="color: red" *ngIf="form.controls.name.hasError('required')">Không được để trống</label>
     </tr>
     <tr>
       <td>Giá sản phẩm</td>

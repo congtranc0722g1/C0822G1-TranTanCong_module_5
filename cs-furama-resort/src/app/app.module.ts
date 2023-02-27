@@ -17,6 +17,7 @@ import { ListContractComponent } from './component/contract/list-contract/list-c
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { InfoFacilityComponent } from './component/facility/info-facility/info-facility.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -34,12 +35,13 @@ import { InfoFacilityComponent } from './component/facility/info-facility/info-f
     ListContractComponent,
     InfoFacilityComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        NgxPaginationModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
